@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="jdoomlauncher:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jdoomlauncher_jar</output-path>
+    <root id="archive" name="jdoomlauncher.jar">
+      <element id="module-output" name="jdoomlauncher" />
+    </root>
+  </artifact>
+</component>
