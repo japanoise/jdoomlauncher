@@ -1,4 +1,4 @@
-package com.github.japanoise;
+package com.github.japanoise.jdoomlauncher;
 
 import javax.swing.*;
 import java.awt.*;
