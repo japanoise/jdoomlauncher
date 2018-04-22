@@ -99,15 +99,17 @@ class Window extends JFrame {
         }
     }
 
-    private JPanel panelForList(String title, JList<DoomGameFile> list, String buttonText, ActionListener buttonAction) {
-        JPanel ret = new JPanel();
-        ret.setLayout(new BorderLayout());
-        ret.add(new JLabel(title), BorderLayout.PAGE_START);
-        ret.add(new JScrollPane(list), BorderLayout.CENTER);
+    private JComponent panelForList(String title, JList<DoomGameFile> list, String buttonText, ActionListener buttonAction) {
+        Box boxLayout = Box.createVerticalBox();
+        boxLayout.setBorder(BorderFactory.createTitledBorder(title));
+        JScrollPane scrollPane = new JScrollPane(list);
+        boxLayout.add(scrollPane);
         JButton button = new JButton(buttonText);
         button.addActionListener(buttonAction);
-        ret.add(button, BorderLayout.PAGE_END);
-        return ret;
+        button.setPreferredSize(new Dimension(Short.MAX_VALUE, button.getPreferredSize().height));
+        button.setMaximumSize(button.getPreferredSize());
+        boxLayout.add(button);
+        return boxLayout;
     }
 
     private JPanel makeButtonPanel() {
