@@ -104,11 +104,13 @@ class Window extends JFrame {
         boxLayout.setBorder(BorderFactory.createTitledBorder(title));
         JScrollPane scrollPane = new JScrollPane(list);
         boxLayout.add(scrollPane);
+        Box buttonBox = Box.createHorizontalBox();
         JButton button = new JButton(buttonText);
         button.addActionListener(buttonAction);
         button.setPreferredSize(new Dimension(Short.MAX_VALUE, button.getPreferredSize().height));
         button.setMaximumSize(button.getPreferredSize());
-        boxLayout.add(button);
+        buttonBox.add(button);
+        boxLayout.add(buttonBox);
         return boxLayout;
     }
 
